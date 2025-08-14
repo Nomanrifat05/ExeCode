@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  background: #f0f8f5;
+  margin-top: 90px;
+}
+
+.standings {
+  padding: 20px;
+}
+
+.standings h2 {
+  margin-bottom: 20px;
+  color: #2c7a7b;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 1000px;
+}
+
+thead {
+  background: #e3fce5;
+  color: #2c7a7b;
+}
+
+thead th,
+tbody td {
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+}
+
+tbody tr:hover {
+  background: #f7fdf9;
+}
+
+.solved {
+  color: green;
+  font-weight: bold;
+}
+
+.unsolved {
+  color: red;
+  font-weight: bold;
+}
+
+.no-attempt {
+  color: #ccc;
+}
+
+.attempts {
+  font-size: 10px;
+  color: #666;
+  display: block;
+}

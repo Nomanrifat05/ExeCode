@@ -1,0 +1,586 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f8f5;
+  padding-top: 90px; /* Adjusted for fixed navbar */
+}
+
+.contest-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.contest-title img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+.contest-title img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.contest-title h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+.contest-title h1 .exe-color {
+  color: #4caf4f;
+  font-weight: 600;
+  font-size: 36px;
+}
+.contest-title h1:hover {
+ 
+  font-size: 38px;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+   
+
+ /* @keyframes dance {
+      0% { transform: translateY(0) rotate(0deg) scale(1); }
+      25% { transform: translateY(-10px) rotate(-10deg) scale(1.1); }
+      50% { transform: translateY(0) rotate(0deg) scale(1); }
+      75% { transform: translateY(-10px) rotate(10deg) scale(1.1); }
+      100% { transform: translateY(0) rotate(0deg) scale(1); }
+    }
+
+    #dancing-text {
+      animation: dance 3.1s ease-in-out infinite;
+      
+    } */
+
+
+     @keyframes full-rotate {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    #rotating-text {
+      animation: full-rotate 3s linear infinite;
+      
+    }
+
+
+
+.contest-title p {
+  color: #888;
+  font-size: 14px;
+}
+
+.container-upcoming-contest,
+.container-ongoing-contest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.upcoming-contest-title,
+.ongoing-contest-title {
+  color: #000000;
+  font-size: 25px;
+  letter-spacing: -1px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+/* .upcoming-contest-title:hover,
+.ongoing-contest-title:hover {
+  color: #4caf4f;
+  font-size: 30px;
+} */
+@keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    #blinking-text {
+      animation: blink 1s linear infinite;
+     
+    }
+
+
+    
+.card-wrapper {
+  max-width: 1000px;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+.card-list .card-item {
+  list-style: none;
+}
+
+.card-list .card-item .card-link {
+  display: block;
+  background: #ffffff;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00000030;
+  transition: 0.5s ease;
+}
+.card-list .card-item .card-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px #0000006c;
+
+}
+
+
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.card-container .img-box {
+  width: 100%;
+  max-height: 280px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s;
+}
+.img-box img:hover {
+  transform: scale(1.1);
+}
+.contest-info {
+  font-size: 14px;
+  color: gray;
+}
+.img-box .contest-info {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.content-box {
+  padding: 10px; /* Consistent padding for all cards */
+}
+
+.card-list .card-link .badge {
+  color: #4caf4f;
+  font-size: 23px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.card-list .card-link .badge:hover {
+  color: #58ed5d;
+
+}
+
+.card-list .card-link .card-time {
+  color: #000;
+  font-size: 13px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.card-list .card-link .card-time:hover {
+  color: #454545;
+}
+
+.card-list .card-link .card-button {
+  font-size: 15px;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background: #4caf4f;
+  cursor: pointer;
+  border-radius: 45px;
+  border: 2px solid #0f6612;
+  transition: 0.3s;
+}
+
+.card-list .card-link .card-button:hover {
+  color: #c00101;
+  background: #ffffff;
+  border: 2px solid #c00101;
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #4caf4f;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button {
+  color: #4caf4f;
+  margin-top: -35px;
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    margin: 0 40px 25px;
+  }
+}
+
+.main-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.sub-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.sub-tabs button {
+  background-color: #e0e0e0;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.sub-tabs button.active {
+  background-color: #4caf4f;
+  color: #ffffff;
+}
+.sub-tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #036507;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.sub-tabs button.active::after {
+  width: 100%;
+  left: 0;
+}
+.sub-tab-content {
+  display: none;
+}
+.sub-tab-content.active {
+  display: block;
+}
+.past-contests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.past-contests-header a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 14px;
+}
+.past-contests-list .contest-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+.past-contests-list .contest-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+.past-contests-list .contest-card h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #000000;
+}
+.past-contests-list .contest-card p {
+  margin: 0;
+  color: #666;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+.pagination button {
+  background-color: transparent;
+  color: #000000;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.pagination button:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+.pagination button.active {
+  background-color: #4caf4f;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.pagination button:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+/* My Contests Table Styling */
+.my-contests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-contests-table th,
+.my-contests-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-contests-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.my-contests-table td {
+    color: #666;
+}
+
+/* Styling for the clickable Contest title link */
+.my-contests-table a {
+    color: #000000; /* Blue color for links, adjust to match your theme */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.my-contests-table a:hover {
+    color: #4caf4f; /* Darker blue on hover */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Ensure the table cells are clickable for the link */
+.my-contests-table td:first-child {
+    cursor: pointer;
+}
+
+/* Alternate row colors for better readability */
+.my-contests-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .my-contests-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .my-contests-table th,
+    .my-contests-table td {
+        min-width: 120px;
+    }
+}
+/* New CSS for Ongoing Contests without Swiper */
+.ongoing-card-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 60px;
+}
+
+.ongoing-card-list .card-item {
+  flex: 0 0 auto;
+  width: 300px; /* Fixed width for each card */
+}
+
+.ongoing-card-list .card-item .card-link {
+  display: block;
+  background: #ffffff;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00000030;
+  transition: 0.5s ease;
+}
+
+.ongoing-card-list .card-item .content-box {
+  padding: 10px; /* Adjusted padding to account for removed button */
+}
+
+.ongoing-card-list .card-item .img-box .contest-info {
+  bottom: 10px; /* Adjusted to avoid overlap with content */
+}
+
+@media (max-width: 768px) {
+  .ongoing-card-list {
+    margin: 0 40px;
+  }
+  .ongoing-card-list .card-item {
+    width: 250px; /* Adjust width for smaller screens */
+  }
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    white-space: pre-wrap; /* Ensure line breaks are respected */
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-cancel {
+    background: #e0e0e0;
+    color: #000;
+}
+
+.popup-confirm {
+    background: #4caf4f;
+    color: #fff;
+}
+
+.popup-confirm:hover {
+      color: #c00101;
+  background: #ffffff;
+  border: 2px solid #c00101;
+}
+
+
+.popup-cancel:hover {
+    background: #000;
+    color: #ffffff;
+    border: #7d7d7d 2px solid;
+}
+
+/* Ensure proper button behavior */
+.card-button {
+    margin-top: 5px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease, text-content 0.3s ease;
+}
+
+.card-button.registered {
+    background: #4caf4f;
+    color: #fff;
+}
+
+.card-button.registered:hover {
+     color: #c00101;
+  background: #ffffff;
+  border: 2px solid #c00101;
+}
+
+
+
+/* New Open Contest Button Style */
+.open-contest-btn {
+    /* padding: 8px 15px;
+    background-color: #4caf4f;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; */
+
+
+
+     padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #4caf4f;
+    color: white;
+      border: 2px solid #0f6612;
+
+    
+}
+
+.open-contest-btn:hover {
+/* color: #4caf4f;
+  background: #ffffff;
+  border: 2px solid #4caf4f; */
+
+
+
+   background-color: white;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+}
+
+.container-ongoing-contest, .content-box2 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 4px;
+    
+}

@@ -1,0 +1,79 @@
+    body {
+        margin-top: 90px;
+        background: #f0f8f5;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        min-width: 1000px;
+    }
+
+    thead {
+        background: #e3fce5;
+        color: #2c7a7b;
+    }
+
+    thead th,
+    tbody td {
+        padding: 10px 15px;
+        text-align: center;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    tbody tr:hover {
+        background: #f7fdf9;
+    }
+
+    .u-name {
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+    .form-container {
+        display: flex;
+        gap: 15px;
+        /* Space between dropdowns */
+        background-color: #ffffff;
+        /* White background for the form */
+        padding: 20px;
+        border-radius: 10px;
+        /* Rounded corners */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
+    }
+
+    label {
+        font-size: 17px;
+        color: #333;
+        font-weight: bold;
+    }
+
+    select {
+        border: none;
+    }
+
+
+    select {
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    select:hover {
+        background-color: #e6f0ff;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #007bff;
+    }

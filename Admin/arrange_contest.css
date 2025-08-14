@@ -1,0 +1,100 @@
+/* Home.css */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f5;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+    color: #4caf4f;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #4caf4f;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.problem-checkbox {
+    margin-bottom: 12px;
+}
+
+.problem-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.problem-checkbox label {
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+
+button[type="submit"] {
+    display: block;
+    background-color: #4caf4f;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 30px auto 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

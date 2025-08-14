@@ -1,0 +1,128 @@
+body{
+    padding-top: 100px;
+    background-color: #f0f8f5;
+}
+
+.home-flex {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.post-container {
+    width: 60%;
+}
+
+.post-details{
+    margin-bottom: 50px;
+    box-shadow: 0 2px 20px #00000020;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.home-img{
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.right-panel {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Upcoming Contest Box */
+.upcoming-contest-home {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000020;
+}
+
+.upcoming-contest-home h3 {
+    text-align: center;
+    color: #4caf4f;
+    margin-bottom: 15px;
+}
+
+.upcoming-contest-home ul {
+    list-style: none;
+    padding: 0;
+}
+
+.upcoming-contest-home li {
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Ranking Table */
+.ranking-home {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00000020;
+    overflow: hidden;
+}
+
+.ranking-home h3 {
+    text-align: center;
+    color: #4caf4f;
+    margin-bottom: 15px;
+}
+
+.ranking-home table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+.ranking-home thead {
+    background: #e3fce5;
+    color: #2c7a7b;
+}
+
+.ranking-home th,
+.ranking-home td {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.ranking-home tbody tr:hover {
+    background: #f7fdf9;
+}
+
+.u-name {
+    text-decoration: none;
+    color: black;
+}
+
+.posted-by{
+    color: #4caf4f;
+}
+
+.post-heading{
+    
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-flex {
+        flex-direction: column;
+    }
+
+    .post-container,
+    .right-panel {
+        width: 100%;
+    }
+}

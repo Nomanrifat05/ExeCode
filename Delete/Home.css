@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 100px;
+    background: #f0f8f5;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    /* Needed for absolute positioning of the pseudo-element */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    left: 75%;
+    /* Aligns with the end of the 70% wide post-container */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #4caf4f;
+    /* Light gray line */
+}
+.post-container {
+    height: 100vh;
+    width: 70%;
+    margin: 0 200px;
+    text-align: justify;
+
+}
+
+.post-details {
+    /* margin: 0 0 10px; */
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.others {
+    height: 100vh;
+    width: 30%;
+    padding: 20px;
+}
+
+.others a {
+    text-decoration: none;
+    /* color: black; */
+}
+
+
+.contest-det {
+    border: 2px solid #c1f6c5;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+
+    position: relative;
+}
+
+.up-coming,
+.contest-name,
+.time {
+    margin-bottom: 10px;
+}
+
+.reg-button {
+    padding: 5px 10px;
+    position: absolute;
+    left: 85px;
+    bottom: -15px;
+
+    /* font-size: 15px; */
+    color: #fff;
+  
+    background: #4caf4f;
+    border-radius: 5px;
+    border: 2px solid #4caf4f;
+    cursor: pointer;
+}
+
+.contest {
+    padding: 30px 20px;
+    margin-bottom: 50px;
+}
+
+.ranking {
+    margin-left: 30px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+thead {
+    background: #e3fce5;
+    color: #2c7a7b;
+}
+
+thead th,
+tbody td {
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+tbody tr:hover {
+    background: #f7fdf9;
+}
+
+.u-name {
+    text-decoration: none;
+    color: black;
+}

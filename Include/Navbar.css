@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.nav-header {
+    background: #f0f8f5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* box-shadow: 0 1px 1px rgb(205, 201, 201); */
+    z-index: 1000;
+}
+
+.upper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 25px 20px;
+}
+
+.upper-nav .profile ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.upper-nav ul li a,
+.lower-nav ul li a {
+    padding: 0px 5px;
+}
+
+.lower-nav {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 124px;
+    flex-shrink: 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+    transition: 0.5s;
+}
+
+.logo a:hover {
+    letter-spacing: 3px;
+    font-size: 24px;
+}
+
+.logo .rote {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover .rote {
+    transform: rotate(30deg);
+}
+
+.logo .first {
+    color: #6CD900;
+}
+
+.profile {
+    flex-shrink: 0;
+}
+
+.profile .nav-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+.lower-nav .nav-item a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Transition Effect */
+.lower-nav .nav-item a:hover,
+.lower-nav .nav-item a.active {
+    color: #4caf4f;
+}
+
+.lower-nav .nav-item a:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #4caf4f;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
+}
+
+.lower-nav .nav-item a:hover:before,
+.lower-nav .nav-item a.active:before {
+    width: 100%;
+}
+
+.search-box {
+    flex-grow: 1;
+    margin: 0 20px;
+    max-width: 500px;
+    transition: max-width 0.3s ease;
+}
+
+.search-box input {
+    padding: 8px 15px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #4caf4f;
+}
+
+.search-box:has(input:focus) {
+    max-width: 550px;
+}

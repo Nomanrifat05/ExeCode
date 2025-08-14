@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  background: #f0f8f5;
+  margin-top: 90px;
+}
+
+.practice-problem-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.problem-table-section {
+  flex: 3;
+}
+
+.problem-table-section h2 {
+  margin-bottom: 20px;
+  color: #2c7a7b;
+}
+
+.problem-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.practice-problem-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.practice-problem-table thead {
+  background: #e3fce5;
+  color: #2c7a7b;
+}
+
+.practice-problem-table th,
+.practice-problem-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.practice-problem-table tbody tr {
+  border-bottom: 1px solid #eaeaea;
+  transition: background 0.3s;
+}
+
+.practice-problem-table tbody tr:hover {
+  background: #f7fdf9;
+}
+
+.practice-problem-table a {
+  color: #007b7f;
+  text-decoration: none;
+}
+
+.status-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.solution-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.difficulty {
+  font-weight: bold;
+}
+
+.difficulty.easy {
+  color: #00b894;
+}
+
+.difficulty.medium {
+  color: #e17055;
+}
+
+.difficulty.hard {
+  color: #d63031;
+}

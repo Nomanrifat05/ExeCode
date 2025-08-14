@@ -1,0 +1,616 @@
+body {
+    margin: 0;
+    background: #f0f8f5;
+    margin-top: 90px;
+}
+
+.container-editprofile {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.sidebar a.active {
+    color: #4caf4f;
+    font-weight: 600;
+}
+
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-pic-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    object-fit: cover;
+}
+
+.profile-pic-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-pic-container:hover .profile-pic-overlay {
+    opacity: 1;
+}
+
+.profile-pic-overlay span {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profile-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-details h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    word-break: break-word;
+}
+
+.profile-details p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.stats-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.circular-stat {
+    text-align: center;
+    width: 120px; /* Increased from 100px */
+    height: 120px; /* Increased from 100px */
+    background-color: grey;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-stat-inside {
+  background-color: #ffffff;
+    border-radius: 60px;
+    text-align: center;
+    width: 105px;
+    height: 105px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circular-stat svg {
+    transform: rotate(0deg); /* Removed -90deg to fix upside-down text */
+    width: 100%;
+    height: 100%;
+}
+
+.circular-stat circle:first-child {
+    stroke: #e0e0e0;
+    stroke-width: 10; /* Increased from 8 */
+    fill: none;
+}
+
+.circular-stat circle:last-child {
+    stroke: #4caf4f;
+    stroke-width: 10; /* Increased from 8 */
+    fill: none;
+    stroke-dasharray: 301.44; /* Updated for new radius (40 * 2 * π) */
+    stroke-dashoffset: 90.432; /* 70% progress for new circumference (301.44 * 0.7) */
+    transition: stroke-dashoffset 0.3s;
+}
+
+.circular-stat text {
+    fill: #333;
+    font-size: 24px; /* Increased from 20 */
+    transform: rotate(358deg); /* Adjusted to counter the circle rotation if needed, but set to 0deg initially */
+    transform-origin: center;
+}
+
+.circular-stat p {
+    margin: 5px 0 0;
+    font-size: 16px; /* Increased from 14 */
+    color: #666;
+}
+
+.progress-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar span {
+    font-weight: 600;
+    color: #333;
+    min-width: 60px; /* Increased from 50 */
+}
+
+.progress {
+    flex-grow: 1;
+    height: 18px; /* Increased from 15 */
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s;
+}
+
+.progress-bar:nth-child(1) .progress-fill {
+    width: 75%;
+    background-color: #10b981; /* Easy - Green */
+}
+
+.progress-bar:nth-child(2) .progress-fill {
+    width: 50%;
+    background-color: #f59e0b; /* Medium - Yellow */
+}
+
+.progress-bar:nth-child(3) .progress-fill {
+    width: 50%;
+    background-color: #ef4444; /* Hard - Red */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.modal-content h3 {
+    margin: 0 0 20px;
+    font-size: 18px;
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-content .preview-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal-content .preview-image-wrapper {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content .preview-image {
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+}
+
+.modal-content .nav-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content .reset-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.modal-content .controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.modal-content .rotate-btn {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content .zoom-container {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.modal-content .zoom-container input[type="range"] {
+    width: 100%;
+}
+
+.modal-content .file-input {
+    display: block;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-content .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-content .modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content .modal-actions .save-btn {
+    background-color: #4caf4f;
+    color: white;
+}
+
+.modal-content .modal-actions .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.profile-box, .account-settings {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.profile-box h3, .account-settings h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    width: 48%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.info-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    display: inline-block;
+    color: #666;
+}
+
+.info-item .edit-mode {
+    display: none;
+    flex-direction: column;
+}
+
+.info-item input, .info-item select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.info-item .location-group {
+    display: flex;
+    gap: 10px;
+}
+
+.info-item .location-group select {
+    flex: 1;
+}
+
+.edit-btn {
+    color: #4caf4f;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.edit-actions {
+    display: none;
+}
+
+.info-item .edit-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.edit-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.edit-actions .save-btn {
+    background-color: #4caf4f;
+    color: white;
+}
+
+.edit-actions .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.account-settings .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.account-settings .info-row label {
+    font-weight: 600;
+    width: 150px;
+}
+
+.account-settings .info-row .value-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.account-settings .info-row .value {
+    margin-right: 10px;
+}
+
+.account-settings .info-row .edit-mode {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+}
+
+.account-settings .info-row .edit-mode input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.account-settings .info-row .edit-mode .edit-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.account-settings .password-edit {
+    display: none;
+    padding: 10px 0;
+}
+
+.account-settings .password-edit .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.account-settings .password-edit input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.account-settings .password-edit .edit-actions {
+    display: block;
+}
+
+.account-settings .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.theme-switch {
+    margin-top: 30px;
+}
+
+.theme-switch label {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .info-item {
+        width: 100%;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .account-settings .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-settings .info-row label {
+        width: 100%;
+    }
+
+    .account-settings .info-row .value-wrapper {
+        margin-top: 5px;
+    }
+
+    .account-settings .info-row .edit-btn {
+        margin-top: 5px;
+    }
+
+    .account-settings .info-row .edit-mode .edit-actions {
+        justify-content: flex-start;
+    }
+
+    .info-item .edit-actions {
+        justify-content: flex-start;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-pic-container {
+        margin-bottom: 15px;
+    }
+
+    .stats-container {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .circular-stat {
+        margin: 0 auto 15px;
+    }
+}
+
+.progressCircularBarContainer {text-align:center;display:inline-block;}
+.progressCircularBarContainer b {text-align:center;clear:both;display:block;font-size:40px;color:#5c9cec;}
+.progressCircularBar {
+  position:relative;
+  margin:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.progressCircularBar canvas {display:block;position:absolute;top:0;left:0;}
+.progressCircularBar span {color:#555;display:block;text-align:center;font-size:30px;font-weight:100;margin-left:5px;}

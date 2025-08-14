@@ -1,0 +1,235 @@
+/* Login.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, sans-serif; */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f8f5;
+    padding-top: 85px;
+    overflow: hidden;
+}
+
+.login-portal {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+    /* More rounded corners */
+    gap: 100px;
+    /* Add space between image and login form */
+}
+
+.login-img {
+    flex: 1.2;
+    /* Give the image container more space to accommodate the larger image */
+    position: relative;
+    display: flex;
+    /* Center the image within the container */
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    /* Ensure the image isn't clipped */
+}
+
+.login-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure the image fits without cropping */
+    transform: scale(1.3);
+    /* Reduced scale to ensure it fits without clipping */
+}
+
+.login {
+    flex: 0.8;
+    /* Reduce the login form's width to balance the layout */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    /* White background for the form */
+    border-radius: 20px;
+}
+
+.brand-name {
+    text-align: center;
+    margin-bottom: 10px;
+    /* Reduced from 15px to move it up */
+    margin-top: -10px;
+    /* Added negative margin to lift it slightly */
+    font-size: 2rem;
+    /* Slightly smaller for better fit */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.first {
+    color: #6CD900;
+}
+
+.second {
+    color: #000;
+}
+
+.user-box {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.user-box:focus {
+    outline: none;
+    border-color: #34a853;
+    /* Green border on focus */
+    box-shadow: 0 0 5px rgba(52, 168, 83, 0.3);
+}
+
+.login-button {
+    margin: 20px 0;
+}
+
+.login-button button {
+    width: 100%;
+    padding: 12px;
+    background: #6CD900;
+    /* Green button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    /* More rounded button */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-button button:hover {
+    background: #2e8b44;
+    /* Darker green on hover */
+}
+
+.forget {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.forget p {
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.forget p a:last-child {
+    color: #34a853;
+    /* Green color for "Sign Up" */
+}
+
+.forget p:hover {
+    text-decoration: underline;
+}
+
+.forget p a {
+    color: #6CD900;
+    text-decoration: none;
+}
+
+.anther-sign {
+    text-align: center;
+}
+
+.anther-sign p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icons i {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.fa-google {
+    color: #4285f4;
+    /* Google blue */
+}
+
+.fa-github {
+    color: #333;
+    /* GitHub black */
+}
+
+.fa-facebook {
+    color: #3b5998;
+    /* Facebook blue */
+}
+
+.icons i:hover {
+    transform: scale(1.1);
+}
+
+/* Privacy policy text */
+.anther-sign::after {
+    content: "The site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.";
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-portal {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        margin: 20px;
+        gap: 10px;
+        /* Smaller gap for mobile */
+    }
+
+    .login-img {
+        flex: 1;
+        height: 200px;
+    }
+
+    .login-img img {
+        transform: scale(1.2);
+        /* Slightly smaller scale for mobile */
+    }
+
+    .login {
+        flex: 1;
+        /* Reset flex for mobile */
+        padding: 20px;
+        border-radius: 20px;
+        /* Ensure rounded corners on mobile */
+    }
+
+    .brand-name {
+        margin-top: -5px;
+        /* Adjusted for mobile to avoid overlap */
+    }
+}
